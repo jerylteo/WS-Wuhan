@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WUHAN</title>
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+    <style>
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <section class="text-center my-5">
+            <h1 class="display-2">Admin Section</h1>
+            <form onsubmit="event.preventDefault(); saveCountry()" class="text-left">
+                <div class="formgroup">
+                    <label>Country</label>
+                    <select class="form-control" id="countryName" required>
+                        <option value="China">China</option>
+                        <option value="India">India</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Korea">Korae</option>
+                        <option value="Taiwan">Taiwan</option>
+                    </select>
+                </div>
+                <div class="row my-4">
+                    <div class="formgroup col-lg-4">
+                        <label>Confirmed Cases</label>
+                        <input type="number" name="confirmedCases" id="confirmedCases" class="form-control" required>
+                    </div>
+                    <div class="formgroup col-lg-4">
+                        <label>Number of Deaths</label>
+                        <input type="number" name="deaths" id="deaths" class="form-control" required>
+                    </div>
+                    <div class="formgroup col-lg-4">
+                        <label>Number of Recovered people</label>
+                        <input type="number" name="recovered" id="recovered" class="form-control" required>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <input type="submit" value="CONFIRM" class="btn btn-primary">
+                </div>
+            </form>
+        </section>
+        <section class="text-left my-5">
+            <h3 class="display-4">Country Data</h3>
+            <div class="card-deck text-center mb-5">
+                <article class="card confirmedCases border-top-0">
+                    <div class="card-body">
+                        <h6 class="font-weight-bold card-title mb-0">Confirmed Cases</h6>
+                    </div>
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Country</th>
+                                <th>No. of Confirmed</th>
+                            </tr>
+                        </thead>
+                        <tbody id="confirmedCasesTable">
+
+                        </tbody>
+                    </table>
+                </article>
+                <article class="card totalDeaths border-top-0">
+                    <div class="card-body">
+                        <h6 class="font-weight-bold card-title mb-0">Total Deaths</h6>
+                    </div>
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Country</th>
+                                <th>No. of Deaths</th>
+                            </tr>
+                        </thead>
+                        <tbody id="totalDeathsTable">
+
+                        </tbody>
+                    </table>
+                </article>
+                <article class="card totalRecovered border-top-0">
+                    <div class="card-body">
+                        <h6 class="font-weight-bold card-title mb-0">Total Recovered</h6>
+                    </div>
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Country</th>
+                                <th>No. of Recovered</th>
+                            </tr>
+                        </thead>
+                        <tbody id="totalRecoveredTable">
+
+                        </tbody>
+                    </table>
+                </article>
+            </div>
+        </section>
+        <section id="newsSection" class="my-5">
+            <h3 class="display-4">Latest News</h3>
+            <ul class="list-group" id="news-list">
+
+            </ul>
+        </section>
+    </div>
+
+    <script src="vendor/js/jquery-3.4.1.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
